@@ -6,7 +6,7 @@ private:
 	std::string _name;
 	int _x;
 	int _y;
-	
+
 public:
 	Location(std::string name, int x, int y);
 	~Location();
@@ -20,4 +20,3 @@ public:
 	int getX() { return _x; }
 	int getY() { return _y; }
 };
-

@@ -1,7 +1,8 @@
 #pragma once
 #include <stack>
 #include "Location.h"
-#include <unordered_map>
+#include <unordered_map>	
+#include <string>
 
 class Map
 {
@@ -12,7 +13,6 @@ private:
 public:
 	Map(std::string startLocationName);
 	~Map();
-
 	Location * CurrentLocation = nullptr;
 	std::string GetPathBackToHome();
 	void Move(Location *newLocation);

@@ -1,4 +1,6 @@
 #include "Map.h"
+#include <iostream>
+using namespace std;
 
 
 
@@ -15,8 +17,8 @@ Map::~Map()
 {
 }
 
-void Map::Move(Location *newLocation) 
-{	
+void Map::Move(Location *newLocation)
+{
 	_locationsVisited.push(newLocation);
 	CurrentLocation = newLocation;
 }
@@ -29,6 +31,18 @@ Location * Map::LookupLocationOnMap(int x, int y)
 
 std::string Map::GetPathBackToHome()
 {
+	std::string path;
 	
-	return "TODO: Implement this";
+
+	while (!_locationsVisited.empty())
+	{
+	    
+		path += _locationsVisited.top()->DisplayLocationInfo();
+		_locationsVisited.pop();
+	}
+	
+
+	
+
+	return "To get back home just follow this path: " + path;
 }
